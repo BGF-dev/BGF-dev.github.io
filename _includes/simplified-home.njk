@@ -1,4 +1,95 @@
 ---
 layout: base-template.njk
+partners: [
+    {'name':'Fox et Compagnie', 'url':'https://foxetcompagnie.be/', 'logo':'fox-min.png'},
+    {'name':'Escape Games Bruxelles', 'url':'https://www.coddygames.com/fr/escape-games-urbains/bruxelles', 'logo':'coddy-min.png'},
+    {'name':'Aumale Vit - Aumale Leeft', 'url':'https://www.facebook.com/Aumalevit/', 'logo':'aumale-min.png'},
+    {'name':'Magic Escape', 'url':'https://magic-escape.be/', 'logo':'magicescape-min.png'},
+    {'name':'La Luck Bruxelles', 'url':'https://la-luck.com/bruxelles/', 'logo':'laluck-min.png'},
+    {'name':'Inspired Global Gaming', 'url':'https://inspiredglobal.be/', 'logo':'inspiredgaming-min.png'},
+    {'name':'The Belgian Beers Race', 'url':'https://www.thebelgianbeersrace.be/fr/', 'logo':'byrgames-min.png'},
+    {'name':"L'alliance Merode", 'url':'https://alliancemerode.be/', 'logo':'alliance-min.png'},
+    {'name':'Kings and Queens Cafe', 'url':'https://www.facebook.com/KingsQueensCafe/', 'logo':'Kings-Queens-Cafe-min.png'},
+    {'name':'Outpost Brussels', 'url':'https://outpostbrussels.be/', 'logo':'outpost-min.png'},
+    {'name':'Le bar à jeux', 'url':'http://lebarajeux.be/', 'logo':'barajeux-min.png'},
+    {'name':'Be Detectives', 'url':'https://bedetectives.be/', 'logo':'bedetectives-min.png'},
+    {'name':'Dedale', 'url':'https://dedale.be/', 'logo':'dedale-min.png'},
+    {'name':'Enygma', 'url':'https://www.enygma.be/', 'logo':'enygma-min.png'},
+    {'name':'Espace Maurice Carème', 'url':'https://www.emca.be/', 'logo':'emca-min.png'},
+    {'name':'Escape Hunt Brussels', 'url':'https://escapehunt.com/be/brussels/', 'logo':'escapehunt-min.png'},
+    {'name':'La fourmilière', 'url':'https://la-fourmiliere.be/', 'logo':'fourmiliere-min.png'},
+    {'name':'Time 4 Events', 'url':'https://www.facebook.com/time4eventsbe', 'logo':'Time_4_events-min.jpg'},
+    {'name':'Wanna Play', 'url':'https://www.wanna-play.be/', 'logo':'WannaPlay-min.jpg'},
+    {'name':'Des jeux une fois', 'url':'http://desjeuxunefois.blogspot.com/', 'logo':'DJUF-min.jpg'},
+    {'name':'Cuvée des Trolls', 'url':'https://www.dubuisson.com/fr/nos-bieres/cuvee-des-trolls/', 'logo':'cuvee_des_trolls-min.jpg'},
+    {'name':'Visit.brussels', 'url':'https://visit.brussels/', 'logo':'Visitbrussels-min.png'},
+    {'name':'Ville de Bruxelles', 'url':'https://www.bruxelles.be/', 'logo':'Ville-min.png'},
+    {'name':'Be.brussels', 'url':'https://be.brussels/', 'logo':'RBC-min.png'},
+    {'name':'Culture.be', 'url':'http://www.culture.be/', 'logo':'FWB-min.png'},
+    {'name':'COCOF', 'url':'http://www.spfb.brussels/', 'logo':'cocof200-min.png'},
+    {'name':'Ludobel', 'url':'http://ludobel.be/', 'logo':'Ludo-min.png'},
+    {'name':'Digital TransMedia', 'url':'http://www.digitaltransmedia.be/', 'logo':'DTM-min.png'}
+]
+partnersPerPage: 5
+ourPartners: "Nos Partenaires"
 ---
-{{ content | safe }}
+{%- set nbPages = partners.length // partnersPerPage if partners.length % partnersPerPage == 0 else partners.length // partnersPerPage + 1 -%}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 landing rounded text-md-left p-5 mt-2 mb-5" id="content">
+            <div class="row mb-4">
+                <div class="col-12 col-lg-3 mb-4 pb-4 justify-content-center text-center justify-content-lg-between">
+                    <img src="/static/img/logo-BGf-fond-rouge.png" class="img-fluid" alt="Brussels Games Festival logo">
+                </div>
+                <div class="col-12 col-lg-9 mb-4 pb-4 d-flex align-items-end justify-content-evenly" id="social_media">
+                    <a class="btn btn-sm" href="https://www.facebook.com/BrusselsGamesFestival" target="_blank" style="background-color: #3B5998;"><i class="bi bi-facebook me-2"></i> Facebook</a>
+                    <a class="btn btn-sm" href="https://twitter.com/bgamesfestival" target="_blank" style="background-color: #55ACEE;"><i class="bi bi bi-twitter me-2"></i> Twitter</a>
+                    <a class="btn btn-sm" href="https://www.instagram.com/brusselsgamesfestival/" target="_blank" style="background-color: #3F729B;"><i class="bi bi-instagram me-2"></i> Instagram</a>
+                    <a class="btn btn-sm" href="https://www.twitch.tv/brusselsgamesfestival" target="_blank" style="background-color: #3B5998;"><i class="bi bi-twitch me-2"></i> Twitch</a>
+                    <a class="btn btn-sm" href="https://www.youtube.com/channel/UCORllle8XLsQWJNkvQ6t33A" target="_blank" style="background-color: #DD4B39;"><i class="bi bi-youtube me-2"></i> Youtube</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ content | safe }} 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>{{ ourPartners }}</h1>
+                    <div id="partners_carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            {%- for i in range(nbPages) -%}
+                            {%- set activeClass = '  class="active" aria-current="true"' if loop.first else "" %}
+                            <button type="button" data-bs-target="#partners_carousel" data-bs-slide-to="{{ i }}" aria-label="Page {{ i + 1 }}"{{ activeClass | safe }}></button>
+                            {%- endfor %}
+                        </div>
+                        <div class="carousel-inner">
+                            {%- for partner in partners %}
+                                {%- set activeClass = ' active' if loop.first else "" -%}
+                                {%- if not loop.first and loop.index0 % partnersPerPage == 0 %}
+                            </div></div>
+                                {%- endif %}
+                                {%- if loop.index0 % partnersPerPage == 0 %}
+                            <div class="carousel-item{{ activeClass }}"><div class="d-flex justify-content-evenly w-100">
+                                {%- endif %}
+                                <a href="{{ partner.url }}" target="_blank" class="d-inline-block" style="width: 100px; height: 100px;"><img src="/static/img/partners/{{ partner.logo }}" class="img-fluid" alt="{{ partner.name }}"></a> 
+                                {%- if loop.last %}
+                            </div></div>
+                                {% endif %}
+                            {%- endfor -%}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#partners_carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#partners_carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
