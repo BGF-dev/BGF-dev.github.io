@@ -1,0 +1,3 @@
+---
+layout: splashscreen.njk
+---
