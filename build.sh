@@ -1,2 +1,3 @@
 rm -rf _site
-eleventy
+rm -rf ../BGF-build/*
+npm run build
