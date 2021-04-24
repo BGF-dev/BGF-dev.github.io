@@ -1,3 +1,3 @@
 ---
-layout: splashscreen.njk
+layout: templates/splashscreen.njk
 ---

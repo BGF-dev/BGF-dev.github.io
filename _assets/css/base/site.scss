@@ -1,10 +1,13 @@
+$site-background-color: #c5b69f;
+$content-background-color: white;
+
 body {
-  background-color: #c5b69f;
+  background-color: $site-background-color;
   font-family: "Nunito", Helvetica, Arial, Lucida, sans-serif;
   font-size: 1.25rem;
 }
 #content {
-  background-color: white;
+  background-color: $content-background-color;
 }
 .nav a.nav-link.active {
   color: #f8f9fa !important;
@@ -14,4 +17,8 @@ body {
 }
 .partner {
   height: 200px;
+}
+
+#simplified-content p {
+  text-align: justify;
 }

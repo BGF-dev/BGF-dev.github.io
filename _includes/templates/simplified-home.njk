@@ -1,5 +1,5 @@
 ---
-layout: base-template.njk
+layout: templates/base-template.njk
 partners: [
     {'name':'Fox et Compagnie', 'url':'https://foxetcompagnie.be/', 'logo':'fox-min.png'},
     {'name':'Escape Games Bruxelles', 'url':'https://www.coddygames.com/fr/escape-games-urbains/bruxelles', 'logo':'coddy-min.png'},
@@ -32,31 +32,53 @@ partners: [
 ]
 partnersPerPage: 5
 ourPartners: "Nos Partenaires"
+social_medias: [
+    {'title':'Soutenez Nous !', 'url': 'https://fr.tipeee.com/brusselsgamesfestival', 'image': 'tipee.png'},
+    {'title':'Rejoignez-nous !', 'url': 'https://discord.gg/2CjvnXFg27', 'image': 'discord.png'},
+    {'title':'Likez-nous !', 'url': 'https://www.facebook.com/BrusselsGamesFestival', 'image': 'facebook.png'},
+    {'title':'Followez-nous !', 'url': 'https://www.instagram.com/brusselsgamesfestival/', 'image': 'instagram.png'},
+]
+youtube_channels: [
+    {'title':'Cleonis', 'url': 'https://www.youtube.com/channel/UCswMukIhDfDvrjAxdm1Bnbg', 'image': 'yt-cleonis.png'},
+    {'title':"Tomorrow's Boardgames Club", 'url': 'https://www.youtube.com/channel/UCIc1OJorRZSUKYJRfvugHFw', 'image': 'yt-tomorrowsBGC.png'},
+    {'title':'Inspired Global Gaming', 'url': 'https://www.youtube.com/channel/UChDtGn95OCXVBllAzth02FQ', 'image': 'yt-inspired_global_gaming.png'},
+    {'title':'Brussels Games Festival', 'url': 'https://panels-images.twitch.tv/panel-541070563-image-df13ab28-8c28-4ee3-92ef-ca76f06fcbc9', 'image': 'yt-bgf.png'},
+]
 ---
 {%- set nbPages = partners.length // partnersPerPage if partners.length % partnersPerPage == 0 else partners.length // partnersPerPage + 1 -%}
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-12 col-md-10 landing rounded text-md-left p-5 mt-2 mb-5" id="content">
+        <div class="col-12 col-md-10 landing rounded text-md-left p-3 mt-2 mb-5" id="content">
             <div class="row mb-4">
                 <div class="col-12 col-lg-3 mb-4 pb-4 justify-content-center text-center justify-content-lg-between">
-                    <img src="/static/img/logo-BGf-fond-rouge.png" class="img-fluid" alt="Brussels Games Festival logo">
+                    <img src="/static/img/logo-BGF-on-tour.png" class="img-fluid" alt="Brussels Games Festival logo">
                 </div>
-                <div class="col-12 col-lg-9 mb-4 pb-4 d-flex align-items-end justify-content-evenly" id="social_media">
-                    <a class="btn btn-sm" href="https://www.facebook.com/BrusselsGamesFestival" target="_blank" style="background-color: #3B5998;"><i class="bi bi-facebook me-2"></i> Facebook</a>
-                    <a class="btn btn-sm" href="https://twitter.com/bgamesfestival" target="_blank" style="background-color: #55ACEE;"><i class="bi bi bi-twitter me-2"></i> Twitter</a>
-                    <a class="btn btn-sm" href="https://www.instagram.com/brusselsgamesfestival/" target="_blank" style="background-color: #3F729B;"><i class="bi bi-instagram me-2"></i> Instagram</a>
-                    <a class="btn btn-sm" href="https://www.twitch.tv/brusselsgamesfestival" target="_blank" style="background-color: #3B5998;"><i class="bi bi-twitch me-2"></i> Twitch</a>
-                    <a class="btn btn-sm" href="https://www.youtube.com/channel/UCORllle8XLsQWJNkvQ6t33A" target="_blank" style="background-color: #DD4B39;"><i class="bi bi-youtube me-2"></i> Youtube</a>
+                <div class="col-12 col-lg-9 row" id="social_media">
+                    {%- for social_media in social_medias %}
+                    <div class="col-12 col-md-3">
+                        <h5>{{ social_media.title }}</h3>
+                        <a href="{{ social_media.url }}" target="_blank"><img src="/static/img/{{ social_media.image }}" class="img-fluid"></a>
+                    </div>
+                    {%- endfor -%}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="simplified-content">
+                    {% renderlayoutblock 'FESTIVAL_PURPOSE' %}
+                    {% renderlayoutblock 'FESTIVAL_PLACE' %}
+                    {% renderlayoutblock 'FESTIVAL_VIDEOS' %}
+                    <div class="row">
+                    {%- for youtube_channel in youtube_channels %}
+                    <div class="col-12 col-md-3 mb-3 mb-md-0">
+                        <a href="{{ youtube_channel.url }}" target="_blank"><img src="/static/img/{{ youtube_channel.image }}" alt="{{ youtube_channel.title }}" class="img-fluid"></a>
+                    </div>
+                    {%- endfor -%}
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    {{ content | safe }} 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <h1>{{ ourPartners }}</h1>
+                    {% renderlayoutblock 'FESTIVAL_PARTNERS' %}
                     <div id="partners_carousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             {%- for i in range(nbPages) -%}

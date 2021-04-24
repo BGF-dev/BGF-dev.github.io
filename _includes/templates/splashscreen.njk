@@ -1,5 +1,5 @@
 ---
-layout: base-template-without-language-choice.njk
+layout: templates/base-template-without-language-choice.njk
 languages: {
     'fr': 'Français',
     'nl': 'Nederlands',
@@ -9,12 +9,12 @@ languages: {
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-sm-12 col-md-8">
-            <img src="/static/img/logo-BGf-fond-rouge.png" class="img-fluid" alt="Brussels Games Festival logo">
+            <img src="/static/img/logo-BGF-on-tour.png" class="img-fluid" alt="Brussels Games Festival logo">
         </div>
         <div class="col-12 col-md-4 pt-5 text-center">
             <div class="d-grid gap-2 col-12 mx-auto">
             {%for language, text in languages%}
-                <a class="btn btn-outline-secondary btn-block col col-md-4 mb-md-3" href="/{{ language }}/">{{ text }}</a>
+                <a class="btn btn-light link-danger btn-block col col-md-4 mb-md-3" href="/{{ language }}/">{{ text }}</a>
             {% endfor %}
             </div>
         </div>
