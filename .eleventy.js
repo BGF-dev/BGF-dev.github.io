@@ -4,14 +4,14 @@ const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minif
 module.exports = function(eleventyConfig) {
   // Copy `/static/` to buildDirectory + `/static`
   eleventyConfig.addPassthroughCopy("static");
-  eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
+  //eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
-  eleventyConfig.addShortcode('renderlayoutblock', (name) => {
-        return (this.layoutblock || {})[name];
+  eleventyConfig.addShortcode('renderlayoutblock', (name, locale=null) => {
+        return (this.layoutblock || {})[name + '__' + locale + '__'];
   });
-  eleventyConfig.addPairedShortcode('layoutblock', (content, name) => {
+  eleventyConfig.addPairedShortcode('layoutblock', (content, name, locale=null) => {
     if (!this.layoutblock) this.layoutblock = {};
-    this.layoutblock[name] = content;
+    this.layoutblock[name + '__' + locale + '__'] = content;
   });
   
   return {
