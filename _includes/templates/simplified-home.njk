@@ -63,18 +63,24 @@ youtube_channels: [
                 </div>
             </div>
             <div class="row">
-                <div class="col" id="simplified-content">
+                <div class="col-12" >
                     {% renderlayoutblock 'SH_FESTIVAL_PURPOSE', locale %}
+                </div>
+                <div class="col-12">
                     {% renderlayoutblock 'SH_FESTIVAL_PLACE', locale %}
+                </div>
+                <div class="col-12">
                     {% renderlayoutblock 'SH_FESTIVAL_VIDEOS', locale %}
                     <div class="row">
                     {%- for youtube_channel in youtube_channels %}
-                    <div class="col-12 col-md-3 mb-3 mb-md-0">
-                        <a href="{{ youtube_channel.url }}" target="_blank"><img src="/static/img/{{ youtube_channel.image }}" alt="{{ youtube_channel.title }}" class="img-fluid"></a>
-                    </div>
+                        <div class="col-12 col-md-3 mb-3 mb-md-0">
+                            <a href="{{ youtube_channel.url }}" target="_blank"><img src="/static/img/{{ youtube_channel.image }}" alt="{{ youtube_channel.title }}" class="img-fluid"></a>
+                        </div>
                     {%- endfor -%}
-                    {% renderlayoutblock 'SH_FESTIVAL_AND_NOW', locale %}
                     </div>
+                </div>
+                <div class="col-12">
+                    {% renderlayoutblock 'SH_FESTIVAL_AND_NOW', locale %}
                 </div>
             </div>
             <div class="row">
