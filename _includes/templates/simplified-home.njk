@@ -63,13 +63,13 @@ youtube_channels: [
                 </div>
             </div>
             <div class="row">
-                <div class="col-12" >
+                <div class="col-12 col-md-8 order-md-1">
                     {% renderlayoutblock 'SH_FESTIVAL_PURPOSE', locale %}
                 </div>
-                <div class="col-12">
+                <div class="col-12 order-md-3">
                     {% renderlayoutblock 'SH_FESTIVAL_PLACE', locale %}
                 </div>
-                <div class="col-12">
+                <div class="col-12 order-md-4">
                     {% renderlayoutblock 'SH_FESTIVAL_VIDEOS', locale %}
                     <div class="row">
                     {%- for youtube_channel in youtube_channels %}
@@ -79,12 +79,34 @@ youtube_channels: [
                     {%- endfor -%}
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12 order-md-5">
                     {% renderlayoutblock 'SH_FESTIVAL_AND_NOW', locale %}
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
+                <div class="col-12 col-md-4 order-md-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Newsletter</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Inscrivez-vous pour recevoir les dernières nouvelles du BGF</h6>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Email...">
+                                <input type="submit" class="btn btn-primary" value="Inscription">
+                            </div>
+                        </div>
+                    </div>
+                    {# <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Contactez-nous</h5>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Nom">
+                                <input type="text" class="form-control" placeholder="Email...">
+                                <textarea class="form-control">
+                                </textarea>
+                                <input type="submit" class="btn btn-primary" value="Envoyer le message">
+                            </div>
+                        </div>
+                    </div> #}
+                </div>
+                <div class="col-12 order-md-last">
                     {% renderlayoutblock 'SH_FESTIVAL_PARTNERS', locale %}
                     <div id="partners_carousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
