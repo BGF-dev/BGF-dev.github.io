@@ -1,10 +1,9 @@
 ---
 layout: templates/simplified-home.njk
-title: Brussels Games Festival
+title: Bienvenue au Brussels Games Festival
 translationKey: simplified-homepage
 ---
 {% layoutblock 'SH_FESTIVAL_PURPOSE', locale %}
-<h1>But du festival</h1>
 <p>Le Brussels Games Festival (BGF) a pour but de promouvoir le jeu sous toutes ses formes et, notamment, de sensibiliser à la pratique du jeu pour tous les citoyens sans distinction d’âge, de sexe, de condition sociale ou d’origine ethnique. Organisé le dernier week-end du mois d’août, il propose d’offrir aux Bruxellois et aux amoureux du jeu des instants de rencontres et de partages. On y trouve des jeux de plateau, party games, jeux de figurines, jeux éducatifs, jeux en bois, jeux de rôle, grandeur nature, jeux du monde, escape games, jeux adaptés proposés par des professionnels mais aussi des tournois, des conférences, une bourse aux jeux et une protozone.</p>
 {% endlayoutblock %}
 
@@ -28,5 +27,9 @@ translationKey: simplified-homepage
 <h1 class="mt-5">Nos partenaires</h1>
 {% endlayoutblock %}
 
-{% layoutblock 'SH_NEWSLETTER', locale %}
-{% endlayoutblock %}
+{%- layoutblock 'SH_NEWSLETTER_PRESENTATION_TEXT', locale -%}
+Inscrivez-vous pour recevoir les dernières nouvelles du BGF
+{%- endlayoutblock -%}
+{%- layoutblock 'SH_NEWSLETTER_BUTTON_TEXT', locale -%}
+Vers le formulaire
+{%- endlayoutblock -%}
