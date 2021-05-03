@@ -19,3 +19,30 @@ body {
 #simplified-content p {
   text-align: justify;
 }
+/*
+@include media-breakpoint-up(xs) {
+  #content {
+    padding-top: 499px;
+  }
+}
+@include media-breakpoint-up(sm) {
+  #content {
+    padding-top: 499px;
+  }
+}
+@include media-breakpoint-up(md) {
+  #content {
+    padding-top: 499px;
+  }
+}
+@include media-breakpoint-up(lg) { 
+  #content {
+    padding-top: 499px;
+  }
+}
+@include media-breakpoint-up(xl) {
+  #content {
+    padding-top: 578px;
+  }
+}
+*/
