@@ -33,10 +33,10 @@ partners: [
 partnersPerPage: 5
 ourPartners: "Nos Partenaires"
 social_medias: [
-    {'title':{'fr':'Soutenez Nous !', 'nl':'Steun ons!', 'en':'Support Us!'}, 'alt':{'fr':'Aller sur Tipee', 'nl':'Tipee', 'en':'Tipee'}, 'url': 'https://fr.tipeee.com/brusselsgamesfestival', 'image': 'tipee.png'},
-    {'title':{'fr':'Rejoignez-nous !', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Discord', 'nl':'Discord', 'en':'Discord'}, 'url': 'https://discord.gg/2CjvnXFg27', 'image': 'discord.png'},
-    {'title':{'fr':'Likez-nous !', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Facebook', 'nl':'Facebook', 'en':'Facebook'}, 'url': 'https://www.facebook.com/BrusselsGamesFestival', 'image': 'facebook.png'},
-    {'title':{'fr':'Followez-nous !', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Instagram', 'nl':'Instagram', 'en':'Instagram'}, 'url': 'https://www.instagram.com/brusselsgamesfestival/', 'image': 'instagram.png'},
+    {'title':{'fr':'Soutenez&nbsp;Nous&nbsp;!', 'nl':'Steun ons!', 'en':'Support Us!'}, 'alt':{'fr':'Aller sur Tipee', 'nl':'Tipee', 'en':'Tipee'}, 'url': 'https://fr.tipeee.com/brusselsgamesfestival', 'image': 'tipee.png'},
+    {'title':{'fr':'Rejoignez&#8209;nous&nbsp;!', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Discord', 'nl':'Discord', 'en':'Discord'}, 'url': 'https://discord.gg/2CjvnXFg27', 'image': 'discord.png'},
+    {'title':{'fr':'Likez&#8209;nous&nbsp;!', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Facebook', 'nl':'Facebook', 'en':'Facebook'}, 'url': 'https://www.facebook.com/BrusselsGamesFestival', 'image': 'facebook.png'},
+    {'title':{'fr':'Followez&#8209;nous&nbsp;!', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Instagram', 'nl':'Instagram', 'en':'Instagram'}, 'url': 'https://www.instagram.com/brusselsgamesfestival/', 'image': 'instagram.png'},
 ]
 youtube_channels: [
     {'title':'Cleonis', 'url': 'https://www.youtube.com/channel/UCswMukIhDfDvrjAxdm1Bnbg', 'image': 'yt-cleonis.png'},
@@ -50,11 +50,14 @@ youtube_channels: [
     <div class="row justify-content-md-center">
         <div class="col-12 col-md-10 landing rounded text-md-left pb-3 mt-2 mb-5" id="content" style="background-image: url(/static/img/banner2.jpg); background-repeat: no-repeat; background-size: contain;">
             <header class="row mb-4">
-                <img src="/static/img/banner.jpg" class="p-0 rounded-top" alt="Header">
+                <img src="/static/img/banner/Banner_1200x630_BGF2020-21_V2-3-1280x672-min.jpg" class="p-0 rounded-top d-none d-sm-block" alt="Header">
+                <img src="/static/img/banner/Mobile_1080x1080_BGF2020-480x480-min.jpg" class="p-0 rounded-top d-block d-sm-none" alt="Header">
+
                 <div class="col-12 row" id="social_media">
                     {%- for social_media in social_medias %}
                     <div class="col-12 col-md-3">
-                        <h2 class="mb-0 mt-2 h5">{{ social_media.title[locale] }}</h2>
+                        <h2 class="mb-0 mt-2 h6 d-none d-md-block d-lg-none">{{ social_media.title[locale] | safe }}</h2>
+                        <h2 class="mb-0 mt-2 h5 d-md-none d-lg-block">{{ social_media.title[locale] | safe }}</h2>
                         <a href="{{ social_media.url }}" target="_blank" rel="noopener"><img src="/static/img/{{ social_media.image }}" class="img-fluid" alt="{{ social_media.alt[locale] }}"><span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a>
                     </div>
                     {%- endfor -%}
@@ -109,7 +112,7 @@ youtube_channels: [
                                 {%- if loop.index0 % partnersPerPage == 0 %}
                             <div class="carousel-item{{ activeClass }}"><div class="d-flex justify-content-evenly w-100">
                                 {%- endif %}
-                                <a href="{{ partner.url }}" target="_blank" class="d-inline-block" style="width: 100px; height: 100px;" rel="noopener"><img src="/static/img/partners/{{ partner.logo }}" class="img-fluid" alt="{{ partner.name }}"><span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a> 
+                                <a href="{{ partner.url }}" target="_blank" class="d-inline-block" style="width: 100px; height: 100px;" rel="noopener"><img src="/static/img/partners/{{ partner.logo }}" loading="lazy" class="img-fluid" alt="{{ partner.name }}"><span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a> 
                                 {%- if loop.last %}
                             </div></div>
                                 {% endif %}
