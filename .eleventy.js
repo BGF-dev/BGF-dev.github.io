@@ -4,7 +4,7 @@ const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minif
 module.exports = function(eleventyConfig) {
   // Copy `/static/` to buildDirectory + `/static`
   eleventyConfig.addPassthroughCopy("static");
-  //eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
+  eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   eleventyConfig.addShortcode('renderlayoutblock', (name, locale=null) => {
         return (this.layoutblock || {})[name + '__' + locale + '__'];

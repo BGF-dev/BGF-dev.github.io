@@ -1,3 +1,10 @@
+---
+opens_in_new_window: {
+  'fr': "(S'ouvre dans une nouvelle fenêtre)",
+  'nl': "(Opent in een nieuw venster)",
+  'en': "(Opens in a new window)"
+}
+---
 <!DOCTYPE html>
 
 <html lang="{{ locale }}">
@@ -26,7 +33,7 @@
   <body>
     {{ content | safe }}
     <footer class="text-center text-muted fs-6 mb-4">
-      &copy;2021 Ludiris asbl
+      &copy;2021 Ludiris asbl - <a href="https://forms.gle/Q2cB9PjnHEbZ4CFD7" target="_blank" rel="noopener">Contactez-nous<span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a>
     </footer>
     <script src="/static/main.js"></script>
   </body>
