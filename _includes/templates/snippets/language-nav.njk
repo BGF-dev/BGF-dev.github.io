@@ -1,0 +1,13 @@
+{%- for available_language in site.languages -%}
+  {% set translatedUrl = "/" + available_language.code + "/" -%}
+  {%- set activeClass = " active" if available_language.code == locale else "" -%}
+  {%- set ariaCurrent = ' aria-current="page"' if available_language.code == locale else "" -%}
+  {%- for item in collections.all %}
+  {%- if item.data.translationKey == translationKey and item.data.locale == available_language.code -%}
+    {%- set translatedUrl = item.url -%}
+  {%- endif -%}
+  {%- endfor %}
+  <a class="nav-link text-secondary{{ activeClass }}{% if loop.first %} ms-auto{% endif %}"{{ ariaCurrent | safe }} lang="{{ available_language.code }}" hreflang="{{ available_language.code }}" href="{{translatedUrl}}">
+    {{ available_language.code }}
+  </a>
+{%- endfor %}

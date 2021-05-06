@@ -1,0 +1,11 @@
+---
+layout: templates/base-template.njk
+---
+{% renderlayoutblock 'BASE_TEMPLATE_BEFORE_CONTAINER', locale %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 landing rounded text-md-left pb-3 mt-2 mb-5" id="content">
+            {{ content | safe }}
+        </div>
+    </div>
+</div>
