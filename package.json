@@ -17,7 +17,7 @@
     "sass": "^1.32.10"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3",
+    "bootstrap": "^5.0.0",
     "debug": "^4.3.1",
     "jquery": "^3.6.0",
     "poppers.js": "^1.16.1"

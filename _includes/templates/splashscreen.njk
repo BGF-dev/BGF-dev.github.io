@@ -1,11 +1,5 @@
----
-layout: templates/base-template.njk
-languages: {
-    'fr': 'Français',
-    'nl': 'Nederlands',
-    'en': 'English',
-}
----
+{% extends 'templates/_base-template.njk' %}
+{% block content %}
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-sm-12 col-md-8">
@@ -13,10 +7,11 @@ languages: {
         </div>
         <div class="col-12 col-md-4 pt-5 text-center">
             <div class="d-grid gap-2 col-12 mx-auto">
-            {%for language, text in languages%}
-                <a class="btn btn-light link-danger btn-block col col-md-4 mb-md-3" href="/{{ language }}/">{{ text }}</a>
+            {%- for available_language in site.languages -%}
+                <a class="btn btn-light link-danger btn-block col col-md-4 mb-md-3" href="/{{ available_language.code }}/">{{ available_language.label }}</a>
             {% endfor %}
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
