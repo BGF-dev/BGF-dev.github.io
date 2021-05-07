@@ -1,0 +1,137 @@
+{
+  "list": [
+    {
+      "name": "Fox et Compagnie",
+      "url": "https://foxetcompagnie.be/",
+      "logo": "fox-min.png"
+    },
+    {
+      "name": "Escape Games Bruxelles",
+      "url": "https://www.coddygames.com/fr/escape-games-urbains/bruxelles",
+      "logo": "coddy-min.png"
+    },
+    {
+      "name": "Aumale Vit - Aumale Leeft",
+      "url": "https://www.facebook.com/Aumalevit/",
+      "logo": "aumale-min.png"
+    },
+    {
+      "name": "Magic Escape",
+      "url": "https://magic-escape.be/",
+      "logo": "magicescape-min.png"
+    },
+    {
+      "name": "La Luck Bruxelles",
+      "url": "https://la-luck.com/bruxelles/",
+      "logo": "laluck-min.png"
+    },
+    {
+      "name": "Inspired Global Gaming",
+      "url": "https://inspiredglobal.be/",
+      "logo": "inspiredgaming-min.png"
+    },
+    {
+      "name": "The Belgian Beers Race",
+      "url": "https://www.thebelgianbeersrace.be/fr/",
+      "logo": "byrgames-min.png"
+    },
+    {
+      "name": "L'alliance Merode",
+      "url": "https://alliancemerode.be/",
+      "logo": "alliance-min.png"
+    },
+    {
+      "name": "Kings and Queens Cafe",
+      "url": "https://www.facebook.com/KingsQueensCafe/",
+      "logo": "Kings-Queens-Cafe-min.png"
+    },
+    {
+      "name": "Outpost Brussels",
+      "url": "https://outpostbrussels.be/",
+      "logo": "outpost-min.png"
+    },
+    {
+      "name": "Le bar à jeux",
+      "url": "http://lebarajeux.be/",
+      "logo": "barajeux-min.png"
+    },
+    {
+      "name": "Be Detectives",
+      "url": "https://bedetectives.be/",
+      "logo": "bedetectives-min.png"
+    },
+    { "name": "Dedale", "url": "https://dedale.be/", "logo": "dedale-min.png" },
+    {
+      "name": "Enygma",
+      "url": "https://www.enygma.be/",
+      "logo": "enygma-min.png"
+    },
+    {
+      "name": "Espace Maurice Carème",
+      "url": "https://www.emca.be/",
+      "logo": "emca-min.png"
+    },
+    {
+      "name": "Escape Hunt Brussels",
+      "url": "https://escapehunt.com/be/brussels/",
+      "logo": "escapehunt-min.png"
+    },
+    {
+      "name": "La fourmilière",
+      "url": "https://la-fourmiliere.be/",
+      "logo": "fourmiliere-min.png"
+    },
+    {
+      "name": "Time 4 Events",
+      "url": "https://www.facebook.com/time4eventsbe",
+      "logo": "Time_4_events-min.jpg"
+    },
+    {
+      "name": "Wanna Play",
+      "url": "https://www.wanna-play.be/",
+      "logo": "WannaPlay-min.jpg"
+    },
+    {
+      "name": "Des jeux une fois",
+      "url": "http://desjeuxunefois.blogspot.com/",
+      "logo": "DJUF-min.jpg"
+    },
+    {
+      "name": "Cuvée des Trolls",
+      "url": "https://www.dubuisson.com/fr/nos-bieres/cuvee-des-trolls/",
+      "logo": "cuvee_des_trolls-min.jpg"
+    },
+    {
+      "name": "Visit.brussels",
+      "url": "https://visit.brussels/",
+      "logo": "Visitbrussels-min.png"
+    },
+    {
+      "name": "Ville de Bruxelles",
+      "url": "https://www.bruxelles.be/",
+      "logo": "Ville-min.png"
+    },
+    {
+      "name": "Be.brussels",
+      "url": "https://be.brussels/",
+      "logo": "RBC-min.png"
+    },
+    {
+      "name": "Culture.be",
+      "url": "http://www.culture.be/",
+      "logo": "FWB-min.png"
+    },
+    {
+      "name": "COCOF",
+      "url": "http://www.spfb.brussels/",
+      "logo": "cocof200-min.png"
+    },
+    { "name": "Ludobel", "url": "http://ludobel.be/", "logo": "Ludo-min.png" },
+    {
+      "name": "Digital TransMedia",
+      "url": "http://www.digitaltransmedia.be/",
+      "logo": "DTM-min.png"
+    }
+  ],
+  "partnersPerPage": 5
+}

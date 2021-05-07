@@ -1,104 +1,60 @@
----
-layout: templates/base-template-background.njk
-partners: [
-    {'name':'Fox et Compagnie', 'url':'https://foxetcompagnie.be/', 'logo':'fox-min.png'},
-    {'name':'Escape Games Bruxelles', 'url':'https://www.coddygames.com/fr/escape-games-urbains/bruxelles', 'logo':'coddy-min.png'},
-    {'name':'Aumale Vit - Aumale Leeft', 'url':'https://www.facebook.com/Aumalevit/', 'logo':'aumale-min.png'},
-    {'name':'Magic Escape', 'url':'https://magic-escape.be/', 'logo':'magicescape-min.png'},
-    {'name':'La Luck Bruxelles', 'url':'https://la-luck.com/bruxelles/', 'logo':'laluck-min.png'},
-    {'name':'Inspired Global Gaming', 'url':'https://inspiredglobal.be/', 'logo':'inspiredgaming-min.png'},
-    {'name':'The Belgian Beers Race', 'url':'https://www.thebelgianbeersrace.be/fr/', 'logo':'byrgames-min.png'},
-    {'name':"L'alliance Merode", 'url':'https://alliancemerode.be/', 'logo':'alliance-min.png'},
-    {'name':'Kings and Queens Cafe', 'url':'https://www.facebook.com/KingsQueensCafe/', 'logo':'Kings-Queens-Cafe-min.png'},
-    {'name':'Outpost Brussels', 'url':'https://outpostbrussels.be/', 'logo':'outpost-min.png'},
-    {'name':'Le bar à jeux', 'url':'http://lebarajeux.be/', 'logo':'barajeux-min.png'},
-    {'name':'Be Detectives', 'url':'https://bedetectives.be/', 'logo':'bedetectives-min.png'},
-    {'name':'Dedale', 'url':'https://dedale.be/', 'logo':'dedale-min.png'},
-    {'name':'Enygma', 'url':'https://www.enygma.be/', 'logo':'enygma-min.png'},
-    {'name':'Espace Maurice Carème', 'url':'https://www.emca.be/', 'logo':'emca-min.png'},
-    {'name':'Escape Hunt Brussels', 'url':'https://escapehunt.com/be/brussels/', 'logo':'escapehunt-min.png'},
-    {'name':'La fourmilière', 'url':'https://la-fourmiliere.be/', 'logo':'fourmiliere-min.png'},
-    {'name':'Time 4 Events', 'url':'https://www.facebook.com/time4eventsbe', 'logo':'Time_4_events-min.jpg'},
-    {'name':'Wanna Play', 'url':'https://www.wanna-play.be/', 'logo':'WannaPlay-min.jpg'},
-    {'name':'Des jeux une fois', 'url':'http://desjeuxunefois.blogspot.com/', 'logo':'DJUF-min.jpg'},
-    {'name':'Cuvée des Trolls', 'url':'https://www.dubuisson.com/fr/nos-bieres/cuvee-des-trolls/', 'logo':'cuvee_des_trolls-min.jpg'},
-    {'name':'Visit.brussels', 'url':'https://visit.brussels/', 'logo':'Visitbrussels-min.png'},
-    {'name':'Ville de Bruxelles', 'url':'https://www.bruxelles.be/', 'logo':'Ville-min.png'},
-    {'name':'Be.brussels', 'url':'https://be.brussels/', 'logo':'RBC-min.png'},
-    {'name':'Culture.be', 'url':'http://www.culture.be/', 'logo':'FWB-min.png'},
-    {'name':'COCOF', 'url':'http://www.spfb.brussels/', 'logo':'cocof200-min.png'},
-    {'name':'Ludobel', 'url':'http://ludobel.be/', 'logo':'Ludo-min.png'},
-    {'name':'Digital TransMedia', 'url':'http://www.digitaltransmedia.be/', 'logo':'DTM-min.png'}
-]
-partnersPerPage: 5
-ourPartners: "Nos Partenaires"
-social_medias: [
-    {'title':{'fr':'Soutenez&nbsp;Nous&nbsp;!', 'nl':'Steun ons!', 'en':'Support Us!'}, 'alt':{'fr':'Aller sur Tipee', 'nl':'Tipee', 'en':'Tipee'}, 'url': 'https://fr.tipeee.com/brusselsgamesfestival', 'image': 'tipee.png'},
-    {'title':{'fr':'Rejoignez&#8209;nous&nbsp;!', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Discord', 'nl':'Discord', 'en':'Discord'}, 'url': 'https://discord.gg/2CjvnXFg27', 'image': 'discord.png'},
-    {'title':{'fr':'Likez&#8209;nous&nbsp;!', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Facebook', 'nl':'Facebook', 'en':'Facebook'}, 'url': 'https://www.facebook.com/BrusselsGamesFestival', 'image': 'facebook.png'},
-    {'title':{'fr':'Followez&#8209;nous&nbsp;!', 'nl':'nl', 'en':'en'}, 'alt':{'fr':'Aller sur Instagram', 'nl':'Instagram', 'en':'Instagram'}, 'url': 'https://www.instagram.com/brusselsgamesfestival/', 'image': 'instagram.png'},
-]
-youtube_channels: [
-    {'title':'Cleonis', 'url': 'https://www.youtube.com/channel/UCswMukIhDfDvrjAxdm1Bnbg', 'image': 'yt-cleonis.png'},
-    {'title':"Tomorrow's Boardgames Club", 'url': 'https://www.youtube.com/channel/UCIc1OJorRZSUKYJRfvugHFw', 'image': 'yt-tomorrowsBGC.png'},
-    {'title':'Inspired Global Gaming', 'url': 'https://www.youtube.com/channel/UChDtGn95OCXVBllAzth02FQ', 'image': 'yt-inspired_global_gaming.png'},
-    {'title':'Brussels Games Festival', 'url': 'https://panels-images.twitch.tv/panel-541070563-image-df13ab28-8c28-4ee3-92ef-ca76f06fcbc9', 'image': 'yt-bgf.png'},
-]
-header_desktop_image: "/static/img/banner/Banner_1200x630_BGF2020-21_V2-3-1280x672-min.jpg"
-header_mobile_image: "/static/img/banner/Mobile_1080x1080_BGF2020-480x480-min.jpg"
----
-{%- set nbPages = partners.length // partnersPerPage if partners.length % partnersPerPage == 0 else partners.length // partnersPerPage + 1 -%}
+{% extends 'templates/base-template-background.njk' %}
 
-<span class="d-none">
-{%- layoutblock 'BASE_TEMPLATE_BEFORE_CONTAINER', locale -%}
+{%- set nbPages = site.partners.list.length // site.partners.partnersPerPage if site.partners.list.length % site.partners.partnersPerPage == 0 else site.partners.list.length // site.partners.partnersPerPage + 1 -%}
+
+{%- set header_desktop_image = "/static/img/banner/Banner_1200x630_BGF2020-21_V2-3-1280x672-min.jpg" %}
+{%- set header_mobile_image = "/static/img/banner/Mobile_1080x1080_BGF2020-480x480-min.jpg" %}
+
+{% block before_container %}
 <nav class="nav" role="navigation">
     {% include 'templates/snippets/language-nav.njk' %}
 </nav>
-{%- endlayoutblock -%}
-</span>
-{% include 'templates/snippets/header.njk' %}
-<div class="row ps-3 pe-3">
-    <div class="col-12 row" id="social_media">
-        {%- for social_media in social_medias %}
+{% endblock %}
+
+{% block site_content %}
+    {% include 'templates/snippets/header.njk' %}
+    <div class="row ps-3 pe-3">
+    <div class="col-12 row mb-5" id="social_media">
+        {%- for social_media in site.social_medias %}
         <div class="col-12 col-md-3">
             <h2 class="mb-0 mt-2 h6 d-none d-md-block d-lg-none">{{ social_media.title[locale] | safe }}</h2>
             <h2 class="mb-0 mt-2 h5 d-md-none d-lg-block">{{ social_media.title[locale] | safe }}</h2>
-            <a href="{{ social_media.url }}" target="_blank" rel="noopener"><img src="/static/img/{{ social_media.image }}" class="img-fluid" alt="{{ social_media.alt[locale] }}"><span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a>
+            <a href="{{ social_media.url }}" target="_blank" rel="noopener"><img src="/static/img/{{ social_media.image }}" class="img-fluid" alt="{{ social_media.alt[locale] }}"><span class="visually-hidden">{{texts[locale].opens_in_new_window}}</span></a>
         </div>
         {%- endfor -%}
     </div>
     <div class="col-12 col-md-8 order-md-1">
-        {% renderlayoutblock 'SH_FESTIVAL_PURPOSE', locale %}
+        {% block purpose %}{% endblock %}
     </div>
     <div class="col-12 order-md-3">
-        {% renderlayoutblock 'SH_FESTIVAL_PLACE', locale %}
+        {% block place %}{% endblock %}
     </div>
     <div class="col-12 order-md-4">
-        {% renderlayoutblock 'SH_FESTIVAL_VIDEOS', locale %}
+        {% block videos %}{% endblock %}
         <div class="row">
-        {%- for youtube_channel in youtube_channels %}
+        {%- for youtube_channel in site.youtube_channels %}
             <div class="col-12 col-md-3 mb-3 mb-md-0">
-                <a href="{{ youtube_channel.url }}" target="_blank" rel="noopener"><img src="/static/img/{{ youtube_channel.image }}" alt="{{ youtube_channel.title }}" class="img-fluid"><span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a>
+                <a href="{{ youtube_channel.url }}" target="_blank" rel="noopener"><img src="/static/img/{{ youtube_channel.image }}" alt="{{ youtube_channel.title }}" class="img-fluid"><span class="visually-hidden">{{texts[locale].opens_in_new_window}}</span></a>
             </div>
         {%- endfor -%}
         </div>
     </div>
     <div class="col-12 order-md-5">
-        {% renderlayoutblock 'SH_FESTIVAL_AND_NOW', locale %}
+        {% block and_now %}{% endblock %}
     </div>
     <div class="col-12 col-md-4 order-md-2">
         <div class="card">
             <div class="card-body text-center">
                 <h2 class="card-title h5">Newsletter</h2>
-                <h3 class="card-subtitle mb-2 text-muted h6">{% renderlayoutblock 'SH_NEWSLETTER_PRESENTATION_TEXT', locale %}</h3>
+                <h3 class="card-subtitle mb-2 text-muted h6">{{texts[locale].newsletter_presentation}}</h3>
                 <div class="card-body">
-                    <a class="btn btn-dark" href="https://forms.gle/P8DPg7LyiDrRaQoL6" target="_blank" rel="noopener">{% renderlayoutblock 'SH_NEWSLETTER_BUTTON_TEXT', locale %}<span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a>
+                    <a class="btn btn-dark" href="https://forms.gle/P8DPg7LyiDrRaQoL6" target="_blank" rel="noopener">{{texts[locale].newsletter_button}}<span class="visually-hidden">{{texts[locale].opens_in_new_window}}</span></a>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-12 order-md-last">
-        {% renderlayoutblock 'SH_FESTIVAL_PARTNERS', locale %}
+        {% block partners %}{% endblock %}
         <div id="partners_carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 {%- for i in range(nbPages) -%}
@@ -107,15 +63,15 @@ header_mobile_image: "/static/img/banner/Mobile_1080x1080_BGF2020-480x480-min.jp
                 {%- endfor %}
             </div>
             <div class="carousel-inner">
-                {%- for partner in partners %}
+                {%- for partner in site.partners.list %}
                     {%- set activeClass = ' active' if loop.first else "" -%}
-                    {%- if not loop.first and loop.index0 % partnersPerPage == 0 %}
+                    {%- if not loop.first and loop.index0 % site.partners.partnersPerPage == 0 %}
                 </div></div>
                     {%- endif %}
-                    {%- if loop.index0 % partnersPerPage == 0 %}
+                    {%- if loop.index0 % site.partners.partnersPerPage == 0 %}
                 <div class="carousel-item{{ activeClass }}"><div class="d-flex justify-content-evenly w-100">
                     {%- endif %}
-                    <a href="{{ partner.url }}" target="_blank" class="d-inline-block" style="width: 100px; height: 100px;" rel="noopener"><img src="/static/img/partners/{{ partner.logo }}" loading="lazy" class="img-fluid" alt="{{ partner.name }}"><span class="visually-hidden">{{opens_in_new_window[locale]}}</span></a> 
+                    <a href="{{ partner.url }}" target="_blank" class="d-inline-block" style="width: 100px; height: 100px;" rel="noopener"><img src="/static/img/partners/{{ partner.logo }}" loading="lazy" class="img-fluid" alt="{{ partner.name }}"><span class="visually-hidden">{{texts[locale].opens_in_new_window}}</span></a> 
                     {%- if loop.last %}
                 </div></div>
                     {% endif %}
@@ -132,3 +88,4 @@ header_mobile_image: "/static/img/banner/Mobile_1080x1080_BGF2020-480x480-min.jp
         </div>
     </div>
 </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+[
+  {
+    "title": {
+      "fr": "Soutenez&nbsp;Nous&nbsp;!",
+      "nl": "Steun ons!",
+      "en": "Support Us!"
+    },
+    "alt": { "fr": "Aller sur Tipee", "nl": "Tipee", "en": "Tipee" },
+    "url": "https://fr.tipeee.com/brusselsgamesfestival",
+    "image": "tipee.png"
+  },
+  {
+    "title": { "fr": "Rejoignez&#8209;nous&nbsp;!", "nl": "nl", "en": "en" },
+    "alt": { "fr": "Aller sur Discord", "nl": "Discord", "en": "Discord" },
+    "url": "https://discord.gg/2CjvnXFg27",
+    "image": "discord.png"
+  },
+  {
+    "title": { "fr": "Likez&#8209;nous&nbsp;!", "nl": "nl", "en": "en" },
+    "alt": { "fr": "Aller sur Facebook", "nl": "Facebook", "en": "Facebook" },
+    "url": "https://www.facebook.com/BrusselsGamesFestival",
+    "image": "facebook.png"
+  },
+  {
+    "title": { "fr": "Followez&#8209;nous&nbsp;!", "nl": "nl", "en": "en" },
+    "alt": {
+      "fr": "Aller sur Instagram",
+      "nl": "Instagram",
+      "en": "Instagram"
+    },
+    "url": "https://www.instagram.com/brusselsgamesfestival/",
+    "image": "instagram.png"
+  }
+]

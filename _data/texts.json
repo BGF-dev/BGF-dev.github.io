@@ -1,0 +1,17 @@
+{
+  "fr": {
+    "opens_in_new_window": "(S'ouvre dans une nouvelle fenêtre)",
+    "newsletter_presentation": "Inscrivez-vous pour recevoir les dernières nouvelles du BGF",
+    "newsletter_button": "Inscrivez-vous à la newsletter"
+  },
+  "nl": {
+    "opens_in_new_window": "(Opent in een nieuw venster)",
+    "newsletter_presentation": "NL1",
+    "newsletter_button": "NL2"
+  },
+  "en": {
+    "opens_in_new_window": "(Opens in a new window)",
+    "newsletter_presentation": "EN1",
+    "newsletter_button": "EN2"
+  }
+}
