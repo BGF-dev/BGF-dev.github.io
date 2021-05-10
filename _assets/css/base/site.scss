@@ -19,3 +19,17 @@ body {
 #simplified-content p {
   text-align: justify;
 }
+
+.navbar.transparent {
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+button.navbar-toggler {
+  position: relative;
+  left: -5px;
+}
+
+.dropdown-menu {
+  min-width: 3rem;
+  text-align: center;
+}
