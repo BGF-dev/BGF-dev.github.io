@@ -1,4 +1,4 @@
-{% extends 'templates/base-template-background.njk' %}
+{% extends 'templates/base-site-template.njk' %}
 
 {%- set nbPages = site.partners.list.length // site.partners.partnersPerPage if site.partners.list.length % site.partners.partnersPerPage == 0 else site.partners.list.length // site.partners.partnersPerPage + 1 -%}
 
@@ -12,8 +12,7 @@
 {% endblock %}
 
 {% block site_content %}
-    {% include 'templates/snippets/header.njk' %}
-    <div class="row ps-3 pe-3">
+<div class="row ps-3 pe-3">
     <div class="col-12 row mb-5" id="social_media">
         {%- for social_media in site.social_medias %}
         <div class="col-12 col-md-3">

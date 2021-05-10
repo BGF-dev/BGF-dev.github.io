@@ -1,0 +1,33 @@
+{%extends 'templates/base-template.njk' %}
+
+{% block content%}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10">
+            <nav class="navbar navbar-expand-lg navbar-dark sticky-top transparent pb-0">
+                <div class="container-fluid ps-0 pe-0">
+                    <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        {% block navbar_menu %}{% endblock %}
+                        {% include 'templates/snippets/language-nav.njk' %}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 landing rounded text-md-left pb-3 mt-2 mb-5{% block content_classes %}{% endblock %}" id="content">
+            <header class="row mb-4">
+                <img src="{{ header_desktop_image }}" class="p-0 rounded-top d-none d-sm-block" alt="Header">
+                <img src="{{ header_mobile_image }}" class="p-0 rounded-top d-block d-sm-none" alt="Header">
+            </header>
+            {% block site_content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
