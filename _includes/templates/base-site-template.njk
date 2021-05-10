@@ -12,7 +12,37 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         {% block navbar_menu %}{% endblock %}
-                        {% include 'templates/snippets/language-nav.njk' %}
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ locale }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {# Finds the url of the current pages in the other languages #}
+
+                            {# Finds this page translation key #}
+                            {% set translation_key = "" %}
+                            {%- for key, urls in site.pages -%}
+                                {%- for lang, url in urls -%}
+                                    {%- if url == page.url and lang == locale -%}
+                                        {% set translation_key = key %}
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            {%- endfor -%}
+
+                            {# Creates the other languages urls #}
+                            {%- for available_language in site.languages -%}
+                                {% set translated_url = "/" + available_language.code + "/" -%}
+                                {%- if available_language.code != locale -%}
+                                    {%- if site.pages[translation_key][available_language.code] -%}
+                                        {% set translated_url = site.pages[translation_key][available_language.code] -%}
+                                    {%- endif -%}
+                                    <li><a class="dropdown-item text-secondary" href="{{ translated_url }}">{{ available_language.code }}</a></li>
+                                {%- endif -%} 
+                            {%- endfor -%}
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
