@@ -1,8 +1,20 @@
 {%extends 'templates/base-template.njk' %}
 
+{% block end_of_head %}
+{{ super() }}
+{%- set social_card_title -%}{% block social_card_title %}{% endblock %}{%- endset -%}
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{social_card_title}}" /> 
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="{% block social_card_description %}{% endblock %}" />
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="{% block social_card_url %}{% endblock %}" />
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="{% block social_card_image %}{% endblock %}" />
+<meta property="twitter:card" content="summary_large_image" /> 
+<meta property="twitter:title" content="{{social_card_title}}" /> 
+{% endblock %}
+
 {% block content%}
 <div class="container">
-    <div class="row justify-content-md-center sticky-top" id="sticky_container">
+    <div class="row justify-content-md-center{% block sticky_container_class %}{% endblock %}" id="sticky_container">
         <div class="col-12 col-md-10 ps-0 pe-0">
             <nav class="navbar navbar-expand-lg navbar-dark transparent pb-0" id="main_navbar">
                 <div class="container-fluid ps-0 pe-0">
@@ -58,38 +70,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-{% block end_of_body %}
-{{ super() }}
-<script>
-let navbar = document.getElementById('main_navbar');
-window.addEventListener('scroll', function(e) {
-    if (window.scrollY > 3 * navbar.offsetHeight / 4) {
-        if (!navbar.classList.contains('scrolled')) {
-            navbar.classList.add('scrolled');
-            navbar.classList.remove('navbar-dark');
-            navbar.classList.add('navbar-light');
-        }
-    }
-    else {
-        if (navbar.classList.contains('scrolled')) {
-            navbar.classList.remove('scrolled');
-            navbar.classList.add('navbar-dark');
-            navbar.classList.remove('navbar-light');
-        }
-    }
-});
-
-let breakpoint = 992;
-let sticky_container = document.getElementById('sticky_container');
-window.addEventListener("resize", function(){
-   if(window.innerWidth < breakpoint){
-      sticky_container.classList.remove('sticky-top');
-   }
-   else{
-       sticky_container.classList.add('sticky-top');
-   }
-});
-</script>
 {% endblock %}

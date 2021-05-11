@@ -1,8 +1,11 @@
-{% extends 'templates/simplified-home.njk' %}
+{% extends 'templates/page.simplified-home.njk' %}
 
-{% block title %}
-Accueil - 
-{% endblock %}
+{% block title %}Accueil - {% endblock %}
+
+{% block social_card_title %}Brussels Games Festival (27-28-29/08/2021){% endblock %}
+{% block social_card_description %}Le BGF propose d’offrir aux Bruxellois et aux amoureux du jeu des instants de rencontres et de partages. On y trouve des jeux de plateau, party games, jeux de figurines, jeux éducatifs, jeux en bois, jeux de rôle, grandeur nature, jeux du monde, escape games, jeux adaptés proposés par des professionnels mais aussi des tournois, des conférences, une bourse aux jeux et une protozone.{% endblock %}
+{% block social_card_url %}{{ site.base_url }}/fr/{% endblock %}
+{% block social_card_image %}{{ site.base_url }}/static/img/banner/Banner_1200x630_BGF2020-21_V2-3-1280x672-min.jpg{% endblock %}
 
 {% block purpose %}
 <p>Le Brussels Games Festival (BGF) a pour but de promouvoir le jeu sous toutes ses formes et, notamment, de sensibiliser à la pratique du jeu pour tous les citoyens sans distinction d’âge, de sexe, de condition sociale ou d’origine ethnique. Organisé le dernier week-end du mois d’août, il propose d’offrir aux Bruxellois et aux amoureux du jeu des instants de rencontres et de partages. On y trouve des jeux de plateau, party games, jeux de figurines, jeux éducatifs, jeux en bois, jeux de rôle, grandeur nature, jeux du monde, escape games, jeux adaptés proposés par des professionnels mais aussi des tournois, des conférences, une bourse aux jeux et une protozone.</p>

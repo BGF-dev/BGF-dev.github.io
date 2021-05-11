@@ -1,23 +1,53 @@
 {%extends 'templates/base-site-template.njk' %}
+
+{% block sticky_container_class %} sticky-top{% endblock %}
+
 {% block navbar_menu %}
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    {%- for menu in site.menu -%}
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+        {%- set active_class=""-%}
+        {%- set aria_current=""-%}
+        {%- if menu[locale].key == current_page_key -%}
+            {%- set active_class=" active"-%}
+            {%- set aria_current=' aria-current="page"'-%}
+        {%- endif -%}
+        <a class="nav-link{{ active_class }}"{{aria_current}} href="/{{locale}}/{{ menu[locale].slug }}/">{{ menu[locale].text }}</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Le BGF</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Programme</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Exposatns / Pro</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Bénévoles</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Presse</a>
-    </li>
+    {%- endfor -%}
 </ul>
+{% endblock %}
+
+{% block end_of_body %}
+{{ super() }}
+<script>
+let navbar = document.getElementById('main_navbar');
+window.addEventListener('scroll', function(e) {
+    if (window.scrollY > 3 * navbar.offsetHeight / 4) {
+        if (!navbar.classList.contains('scrolled')) {
+            navbar.classList.add('scrolled');
+            navbar.classList.remove('navbar-dark');
+            navbar.classList.add('navbar-light');
+        }
+    }
+    else {
+        if (navbar.classList.contains('scrolled')) {
+            navbar.classList.remove('scrolled');
+            navbar.classList.add('navbar-dark');
+            navbar.classList.remove('navbar-light');
+        }
+    }
+});
+
+let breakpoint = 992;
+let sticky_container = document.getElementById('sticky_container');
+window.addEventListener("resize", function(){
+   if(window.innerWidth < breakpoint){
+      sticky_container.classList.remove('sticky-top');
+   }
+   else{
+       sticky_container.classList.add('sticky-top');
+   }
+});
+</script>
 {% endblock %}

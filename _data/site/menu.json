@@ -1,0 +1,104 @@
+[
+  {
+    "fr": {
+      "key": "homepage",
+      "text": "Accueil",
+      "slug": "index-full"
+    },
+    "nl": {
+      "key": "homepage",
+      "text": "Home",
+      "slug": "index-full"
+    },
+    "en": {
+      "key": "homepage",
+      "text": "Home",
+      "slug": "index-full-en"
+    }
+  },
+  {
+    "fr": {
+      "key": "the-bgf",
+      "text": "Le BGF",
+      "slug": "le-bgf"
+    },
+    "nl": {
+      "key": "the-bgf",
+      "text": "De BGF",
+      "slug": "de-bgf"
+    },
+    "en": {
+      "key": "the-bgf",
+      "text": "The BGF",
+      "slug": "the-bgf"
+    }
+  },
+  {
+    "fr": {
+      "key": "program",
+      "text": "Programme",
+      "slug": "programme"
+    },
+    "nl": {
+      "key": "program",
+      "text": "Programma",
+      "slug": "programma"
+    },
+    "en": {
+      "key": "program",
+      "text": "Program",
+      "slug": "program"
+    }
+  },
+  {
+    "fr": {
+      "key": "exhibitors-pros",
+      "text": "Exposants / Pros",
+      "slug": "exposants-pros"
+    },
+    "nl": {
+      "key": "exhibitors-pros",
+      "text": "Exposanten / Pros",
+      "slug": "exposanten-pros"
+    },
+    "en": {
+      "key": "exhibitors-pros",
+      "text": "Exhibitors / Pros",
+      "slug": "exhibitors-pros"
+    }
+  },
+  {
+    "fr": {
+      "key": "volunteers",
+      "text": "Bénévoles",
+      "slug": "benevoles"
+    },
+    "nl": {
+      "key": "volunteers",
+      "text": "Vrijwilligers",
+      "slug": "vrijwilligers"
+    },
+    "en": {
+      "key": "volunteers",
+      "text": "Volunteers",
+      "slug": "volunteers"
+    }
+  },
+  {
+    "fr": {
+      "key": "presse",
+      "text": "Presse",
+      "slug": "presse"
+    },
+    "nl": {
+      "key": "presse",
+      "text": "Pers",
+      "slug": "pers"
+    },
+    "en": {
+      "key": "presse",
+      "text": "Press",
+      "slug": "press"
+    }
+  }
+]
