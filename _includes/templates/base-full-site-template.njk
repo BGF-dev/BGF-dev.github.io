@@ -21,7 +21,12 @@
 {% block end_of_body %}
 {{ super() }}
 <script>
+let breakpoint = 992;
+
 let navbar = document.getElementById('main_navbar');
+let header = document.getElementById('page_header');
+let logo = document.getElementById('bgf_logo_small');
+
 window.addEventListener('scroll', function(e) {
     if (window.scrollY > 3 * navbar.offsetHeight / 4) {
         if (!navbar.classList.contains('scrolled')) {
@@ -37,9 +42,21 @@ window.addEventListener('scroll', function(e) {
             navbar.classList.remove('navbar-light');
         }
     }
+    if(window.innerWidth >= breakpoint){
+        if (window.scrollY > header.offsetHeight / 2) {
+            if (!logo.classList.contains('scrolled')) {
+                logo.classList.add('scrolled');
+            }
+        }
+        else {
+            if (logo.classList.contains('scrolled')) {
+                logo.classList.remove('scrolled');
+            }
+        }
+    }
 });
 
-let breakpoint = 992;
+
 let sticky_container = document.getElementById('sticky_container');
 window.addEventListener("resize", function(){
    if(window.innerWidth < breakpoint){

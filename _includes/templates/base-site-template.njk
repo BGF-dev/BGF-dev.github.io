@@ -3,13 +3,15 @@
 {% block end_of_head %}
 {{ super() }}
 {%- set social_card_title -%}{% block social_card_title %}{% endblock %}{%- endset -%}
+{%- set description -%}{% block social_card_description %}{% endblock %}{%- endset -%}
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
-<meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{social_card_title}}" /> 
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="{% block social_card_description %}{% endblock %}" />
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ social_card_title }}" /> 
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{ description }}" />
 <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{% block social_card_url %}{% endblock %}" />
 <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{% block social_card_image %}{% endblock %}" />
 <meta property="twitter:card" content="summary_large_image" /> 
-<meta property="twitter:title" content="{{social_card_title}}" /> 
+<meta property="twitter:title" content="{{social_card_title}}" />
+<meta name="description" content="{{ description }}">
 {% endblock %}
 
 {% block content%}
@@ -18,7 +20,7 @@
         <div class="col-12 col-md-10 ps-0 pe-0">
             <nav class="navbar navbar-expand-lg navbar-dark transparent pb-0" id="main_navbar">
                 <div class="container-fluid ps-0 pe-0">
-                    <!--<a class="navbar-brand" href="#">Navbar</a>-->
+                    <a class="navbar-brand" id="bgf_logo_small" href="/{{locale}}/"><img src="/static/img/logo-bgf-on-tour-min-120.png"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -62,7 +64,7 @@
     </div>
     <div class="row justify-content-md-center">
         <div class="col-12 col-md-10 landing rounded text-md-left pb-3 mt-2 mb-5{% block content_classes %}{% endblock %}" id="content">
-            <header class="row mb-4">
+            <header class="row mb-4" id="page_header">
                 <img src="{{ header_desktop_image }}" class="p-0 rounded-top d-none d-sm-block" alt="Header">
                 <img src="{{ header_mobile_image }}" class="p-0 rounded-top d-block d-sm-none" alt="Header">
             </header>
