@@ -86,17 +86,17 @@
   },
   {
     "fr": {
-      "key": "presse",
+      "key": "press",
       "text": "Presse",
       "slug": "presse"
     },
     "nl": {
-      "key": "presse",
+      "key": "press",
       "text": "Pers",
       "slug": "pers"
     },
     "en": {
-      "key": "presse",
+      "key": "press",
       "text": "Press",
       "slug": "press"
     }

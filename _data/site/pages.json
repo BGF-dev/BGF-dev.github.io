@@ -1,6 +1,32 @@
 {
-    "homepage": {
-        "fr": "/fr/index-full/",
-        "en": "/en/index-full-en/"
-    }
+  "homepage": {
+    "fr": "/fr/index-full/",
+    "nl": "/nl/index-full/",
+    "en": "/en/index-full/"
+  },
+  "the-bgf": {
+    "fr": "/fr/le-bgf/",
+    "nl": "/nl/de-bgf/",
+    "en": "/en/the-bgf/"
+  },
+  "program": {
+    "fr": "/fr/programme/",
+    "nl": "/nl/programma/",
+    "en": "/en/program/"
+  },
+  "exhibitors-pros": {
+    "fr": "/fr/exposants-pros/",
+    "nl": "/nl/exposanten-pros/",
+    "en": "/en/exhibitors-pros/"
+  },
+  "volunteers": {
+    "fr": "/fr/benevoles/",
+    "nl": "/nl/vrijwilligers/",
+    "en": "/en/volunteers/"
+  },
+  "press": {
+    "fr": "/fr/presse/",
+    "nl": "/nl/pers/",
+    "en": "/en/press/"
+  }
 }
