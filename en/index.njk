@@ -1,6 +1,32 @@
 {% extends 'templates/page.simplified-home.njk' %}
 
-{% block social_card_title %}{% endblock %}
-{% block social_card_description %}{% endblock %}
-{% block social_card_url %}{% endblock %}
-{% block social_card_image %}{% endblock %}
+{% block title %}Home - {% endblock %}
+
+{% block social_card_title %}Brussels Games Festival (27-28-29/08/2021){% endblock %}
+{% block social_card_description %}The BGF proposes to offer to Brussels and games lovers moments of encounters and sharing. There are board games, party games, miniature games, educational games, wooden games, role-playing games, life-size games, world games, escape games, adapted games offered by professionals but also tournaments, conferences, etc. a games market and a protozone.{% endblock %}
+{% block social_card_url %}{{ site.base_url }}/en/{% endblock %}
+{% block social_card_image %}{{ site.base_url }}/static/img/banner/Banner_1200x630_BGF2020-21_V2-3-1280x672-min.jpg{% endblock %}
+
+{% block purpose %}
+<p>The Brussels Games Festival (BGF) aims to promote the game in all its forms and, in particular, to raise awareness of the practice of the game for all citizens regardless of age, sex, social status or ethnic origin . Organized the last weekend of August, it proposes to offer to Brussels and games lovers moments of encounters and sharing. There are board games, party games, miniature games, educational games, wooden games, role-playing games, life-size games, world games, escape games, adapted games offered by professionals but also tournaments, conferences, etc. a games market and a protozone.</p>
+{% endblock %}
+
+{% block place %}
+<h1 class="mt-5">Location</h1>
+<p>In 2020, due to the health context, the festival took place mainly online and in a dozen partner venues in Brussels. The BGF became the BGF on tour. In addition to the hundreds of games offered in the four corners of the capital, the online version offers 21 hours of live with discussions, live animations, prototypes accessible on different platforms, video games published on Facebook, an online tournament, an interactive escape game etc.</p>
+{% endblock %}
+
+{% block videos %}
+<h1 class="mt-5">Videos</h1>
+<p>You can find the videos of the 2020 edition and of previous editions on our Youtube channel.</p>
+<p>Check the channels of our hosts and partners.</p>
+{% endblock %}
+
+{% block and_now %}
+<h1 class="mt-5">And now ?</h1>
+<p>Information for the 2021 edition will be communicated as soon as possible. Please feel free to follow us on social media and subscribe to our newsletter to be kept up to date.</p>
+{% endblock %}
+
+{% block partners %}
+<h1 class="mt-5">Our partners</h1>
+{% endblock %}
