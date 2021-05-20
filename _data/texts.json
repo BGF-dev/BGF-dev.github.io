@@ -3,18 +3,21 @@
     "opens_in_new_window": "(S'ouvre dans une nouvelle fenêtre)",
     "newsletter_presentation": "Inscrivez-vous pour recevoir les dernières nouvelles du BGF",
     "newsletter_button": "Inscrivez-vous à la newsletter",
-    "contact": "Contactez-nous"
+    "contact": "Contactez-nous",
+    "home": "Acceuil"
   },
   "nl": {
     "opens_in_new_window": "(Opent in een nieuw venster)",
     "newsletter_presentation": "Schrijven jullie zich aan om het laatste nieuws van BGF te krijgen",
     "newsletter_button": "Ik schrijf me aan",
-    "contact": "Contacteer ons"
+    "contact": "Contacteer ons",
+    "home": "Home"
   },
   "en": {
     "opens_in_new_window": "(Opens in a new window)",
     "newsletter_presentation": "Sign up to receive the latest news from the BGF",
     "newsletter_button": "Subscribe to the newsletter",
-    "contact": "Contact us"
+    "contact": "Contact us",
+    "home": "Home"
   }
 }
